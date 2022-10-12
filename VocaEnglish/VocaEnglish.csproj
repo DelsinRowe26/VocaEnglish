@@ -65,6 +65,7 @@
     <Compile Include="SampleDSPPitch.cs" />
     <Compile Include="SimpleMixer.cs" />
     <Compile Include="SoftCl.cs" />
+    <Compile Include="TembroClass.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

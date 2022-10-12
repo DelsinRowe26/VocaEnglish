@@ -218,6 +218,129 @@ namespace VocaEnglish
             mDspPitch.PitchShift = (float)Math.Pow(2.0F, pitchVal / 13.0F);
         }
 
+        private void Feeling_in_the_body_pattern()
+        {
+            TembroClass tembro = new TembroClass();
+            string PathFile = @"VocaEnglish\Pattern\Wide_voiceMan.tmp";
+            tembro.Tembro(SampleRate, PathFile);
+            pitchVal = 0;
+            reverbVal = 150;
+        }
+
+        private void TimerRec()
+        {
+            Dispatcher.Invoke(() => lbTimer.Visibility = Visibility.Visible);
+            int i = 3;
+            while (i > 0)
+            {
+                Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
+                Thread.Sleep(1000);
+                i--;
+            }
+            Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
+            Dispatcher.Invoke(() => lbTimer.Visibility = Visibility.Hidden);
+        }
+
+        private async void EnglishVoca()
+        {
+            Feeling_in_the_body_pattern();
+
+            btnPlay.Visibility = Visibility.Hidden;
+
+            lbText.Content = "Сейчас начнется трёх минутная подготовка";
+            lbText.Visibility = Visibility.Visible;
+            await Task.Delay(3000);
+            lbText.Visibility = Visibility.Hidden; 
+
+            Stop();
+            StartFullDuplex();
+            await Task.Run(() => PitchTimerFeelInTheBody());
+            Stop();
+
+            lbText.Content = "Хорошо. Сейчас начнут появляться слова на экране\nслушайте их, и повторняйте их, после фразы 'ПОВТОРИТЕ'";
+            lbText.Visibility = Visibility.Visible;
+            await Task.Delay(6000);
+
+            lbText.Content = "hint\n[hɪnt]\nнамек, совет, оттенок";
+            Sound(@"VocaEnglish\Words\hint.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            /*(lbSubText.Visibility = Visibility.Visible;
+            lbSubText.Content = "ПОВТОРИТЕ";
+            await Task.Run(() => TimerRec());
+            lbSubText.Visibility = Visibility.Hidden;*/
+            TimeTextRep();
+
+            //На всякий случай мало ли что
+
+            Sound(@"VocaEnglish\Words\hint.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            TimeTextRep();
+
+            lbText.Content = "ferry\n[ˈfer.i]\nпаром, переправа";
+            Sound(@"VocaEnglish\Words\ferry.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            TimeTextRep();
+
+            Sound(@"VocaEnglish\Words\ferry.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            TimeTextRep();
+
+            lbText.Content = "dairy\n[ˈdeə.ri]\nмолочная, молочный, маслодельня";
+            Sound(@"VocaEnglish\Words\dairy.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            TimeTextRep();
+
+            Sound(@"VocaEnglish\Words\dairy.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            TimeTextRep();
+
+            lbText.Content = "plank\n[plæŋk]\nпланка, доска, обшивная доска или планка";
+            Sound(@"VocaEnglish\Words\plank.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            TimeTextRep();
+
+            Sound(@"VocaEnglish\Words\plank.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            TimeTextRep();
+        }
+
+        private async void TimeTextRep()
+        {
+            lbSubText.Visibility = Visibility.Visible;
+            lbSubText.Content = "ПОВТОРИТЕ";
+            await Task.Run(() => TimerRec());
+            lbSubText.Visibility = Visibility.Hidden;
+
+            Stop();
+            StartFullDuplex();
+            await Task.Delay(1000);
+            lbText.Visibility = Visibility.Hidden;
+            await Task.Delay(1000);
+            lbText.Visibility = Visibility.Visible;
+            await Task.Delay(1000);
+            lbText.Visibility = Visibility.Hidden;
+            await Task.Delay(1000);
+            lbText.Visibility = Visibility.Visible;
+            await Task.Delay(1000);
+            Stop();
+        }
+
         private void Stop()
         {
             try
@@ -358,6 +481,8 @@ namespace VocaEnglish
             Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
             Dispatcher.Invoke(() => lbTimer.Visibility = Visibility.Hidden);
         }
+
+        //private void TimerPronunciation
 
         private void VocaEnglish_Loaded(object sender, RoutedEventArgs e)
         {

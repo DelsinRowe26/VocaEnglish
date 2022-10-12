@@ -28,7 +28,23 @@
         </ComboBox>
         <Label x:Name="lbMicrophone" Content="Microphone selection" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
         <Label x:Name="lbSpeaker" Content="Speaker selection" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
-        <Label x:Name="lbTimer" Content="0" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" HorizontalContentAlignment="Center">
+        <Label x:Name="lbTimer" Content="0" HorizontalAlignment="Center" Margin="0,28,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" HorizontalContentAlignment="Center" Visibility="Visible">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF100B7"/>
+                    <GradientStop Color="#FF8D00FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="lbText" Content="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="20" FontWeight="Bold" Visibility="Visible">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF100B7"/>
+                    <GradientStop Color="#FF8D00FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="lbSubText" Content="0" HorizontalAlignment="Center" Margin="0,88,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
