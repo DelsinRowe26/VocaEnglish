@@ -48,7 +48,7 @@ namespace VocaEnglish
 
         private float pitchVal;
         private float reverbVal;
-        private int SampleRate, SoundClick = 0;
+        private int SampleRate, SoundClick = 0, ImgBtnTurboClick = 0;
 
         string langindex;
 
@@ -213,6 +213,52 @@ namespace VocaEnglish
             //return false;
         }
 
+        private async void StartFullDuplex1()//запуск пича и громкости
+        {
+            try
+            {
+                SoundClick = 1;
+                //Запускает устройство захвата звука с задержкой 1 мс.
+                //await Task.Run(() => SoundIn());
+                SoundIn();
+
+                var source = new SoundInSource(mSoundIn) { FillWithZeros = true };
+
+                //Init DSP для смещения высоты тона
+                mDspPitch = new SampleDSPPitch(source.ToSampleSource().ToMono());
+
+                SetPitchShiftValue();
+
+                //Инициальный микшер
+                Mixer();
+
+                //Добавляем наш источник звука в микшер
+                mMixer.AddSource(mDspPitch.ChangeSampleRate(mMixer.WaveFormat.SampleRate));
+
+                //Запускает устройство воспроизведения звука с задержкой 1 мс.
+                await Task.Run(() => SoundOut());
+
+            }
+            catch (Exception ex)
+            {
+                if (langindex == "0")
+                {
+                    string msg = "Ошибка в StartFullDuplex: \r\n" + ex.Message;
+                    LogClass.LogWrite(msg);
+                    MessageBox.Show(msg);
+                    Debug.WriteLine(msg);
+                }
+                else
+                {
+                    string msg = "Error in StartFullDuplex: \r\n" + ex.Message;
+                    LogClass.LogWrite(msg);
+                    MessageBox.Show(msg);
+                    Debug.WriteLine(msg);
+                }
+            }
+            //return false;
+        }
+
         private void SetPitchShiftValue()
         {
             mDspPitch.PitchShift = (float)Math.Pow(2.0F, pitchVal / 13.0F);
@@ -247,7 +293,7 @@ namespace VocaEnglish
 
             btnPlay.Visibility = Visibility.Hidden;
 
-            lbText.Content = "Сейчас начнется трёх минутная подготовка";
+            /*lbText.Content = "Сейчас начнется трёх минутная подготовка";
             lbText.Visibility = Visibility.Visible;
             await Task.Delay(3000);
             lbText.Visibility = Visibility.Hidden; 
@@ -255,7 +301,7 @@ namespace VocaEnglish
             Stop();
             StartFullDuplex();
             await Task.Run(() => PitchTimerFeelInTheBody());
-            Stop();
+            Stop();*/
 
             lbText.Content = "Хорошо. Сейчас начнут появляться слова на экране\nслушайте их, и повторняйте их, после фразы 'ПОВТОРИТЕ'";
             lbText.Visibility = Visibility.Visible;
@@ -270,7 +316,7 @@ namespace VocaEnglish
             lbSubText.Content = "ПОВТОРИТЕ";
             await Task.Run(() => TimerRec());
             lbSubText.Visibility = Visibility.Hidden;*/
-            TimeTextRep();
+            await Task.Run(() => TimeTextRep());
 
             //На всякий случай мало ли что
 
@@ -278,66 +324,534 @@ namespace VocaEnglish
             await Task.Delay(2000);
             Stop();
 
-            TimeTextRep();
+            await Task.Run(() => TimeTextRep());
 
             lbText.Content = "ferry\n[ˈfer.i]\nпаром, переправа";
             Sound(@"VocaEnglish\Words\ferry.wav");
             await Task.Delay(2000);
             Stop();
 
-            TimeTextRep();
+            await Task.Run(() => TimeTextRep());
 
             Sound(@"VocaEnglish\Words\ferry.wav");
             await Task.Delay(2000);
             Stop();
 
-            TimeTextRep();
+            await Task.Run(() => TimeTextRep());
 
             lbText.Content = "dairy\n[ˈdeə.ri]\nмолочная, молочный, маслодельня";
             Sound(@"VocaEnglish\Words\dairy.wav");
             await Task.Delay(2000);
             Stop();
 
-            TimeTextRep();
+            await Task.Run(() => TimeTextRep());
 
             Sound(@"VocaEnglish\Words\dairy.wav");
             await Task.Delay(2000);
             Stop();
 
-            TimeTextRep();
+            await Task.Run(() => TimeTextRep());
 
             lbText.Content = "plank\n[plæŋk]\nпланка, доска, обшивная доска или планка";
             Sound(@"VocaEnglish\Words\plank.wav");
             await Task.Delay(2000);
             Stop();
 
-            TimeTextRep();
+            await Task.Run(() => TimeTextRep());
 
             Sound(@"VocaEnglish\Words\plank.wav");
             await Task.Delay(2000);
             Stop();
 
-            TimeTextRep();
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "wag\n[wæɡ]\n/шутник, взмах, бездельник";
+            Sound(@"VocaEnglish\Words\wag.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\wag.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "throttle\n[ˈθrɒt.l̩]\nдушить, дросселировать, задыхаться";
+            Sound(@"VocaEnglish\Words\throttle.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\throttle.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "stubble\n[ˈstʌb.əl]\nщетина";
+            Sound(@"VocaEnglish\Words\stubble.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\stubble.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "pittance\n[ˈpɪt.əns]\nжалкие гроши, подачка";
+            Sound(@"VocaEnglish\Words\pittance.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\pittance.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "midget\n[ˈmɪdʒ.ɪt]\nкарлик, лилипут";
+            Sound(@"VocaEnglish\Words\midget.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\midget.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "botch\n[bɒtʃ]\nпортить, неумело латать, делать небрежно";
+            Sound(@"VocaEnglish\Words\botch.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\botch.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "prig\n[prɪɡ]\nпедант, формалист";
+            Sound(@"VocaEnglish\Words\prig.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\prig.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "soothsayer\n[ˈsuːθˌseɪ.ər]\nпредсказатель, гадалка";
+            Sound(@"VocaEnglish\Words\soothsayer.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\soothsayer.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "imbroglio\n[ɪmˈbrəʊ.li.əʊ]\nпутаница, запутанная ситуация, сложная ситуация";
+            Sound(@"VocaEnglish\Words\imbroglio.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\imbroglio.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "layer\n[ˈleɪə(r)]\nслой, уровень, пласт";
+            Sound(@"VocaEnglish\Words\layer.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\layer.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "delve\n[delv]\nкопаться, рыться, копать";
+            Sound(@"VocaEnglish\Words\delve.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\delve.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "disquisition\n[ˌdɪs.kwɪˈzɪʃ.ən]\nисследование, дознание, подробное исследование";
+            Sound(@"VocaEnglish\Words\disquisition.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\disquisition.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "winnow\n[ˈwɪn.əʊ]\nвеять, отсеивать";
+            Sound(@"VocaEnglish\Words\winnow.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\winnow.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "ugly\n[ˈʌɡli]\nуродливый, безобразный, неприятный";
+            Sound(@"VocaEnglish\Words\ugly.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\ugly.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "guard\n[ɡɑːd]\nстража, охрана, гвардия";
+            Sound(@"VocaEnglish\Words\guard.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\guard.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "dust\n[dʌst]\nпыль, прах, пыльца";
+            Sound(@"VocaEnglish\Words\dust.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\dust.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "interdependent\n[ˌɪn.tə.dɪˈpen.dənt]\nвзаимозависимый, зависящий один от другого";
+            Sound(@"VocaEnglish\Words\interdependent.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\interdependent.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "commonality\n[ˌkɒm.ənˈæl.ə.ti]\nобщность";
+            Sound(@"VocaEnglish\Words\commonality.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\commonality.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "overreach\n[ˌəʊ.vəˈriːtʃ]\nперехитрить, овладевать";
+            Sound(@"VocaEnglish\Words\overreach.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\overreach.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "moth\n[mɒθ]\nмоль, мотылек, ночная бабочка";
+            Sound(@"VocaEnglish\Words\moth.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\moth.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "tortoise\n[ˈtɔː.təs]\nчерепаха";
+            Sound(@"VocaEnglish\Words\tortoise.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\tortoise.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "pleasingly\n[ˈpliː.zɪŋ]\nприятно";
+            Sound(@"VocaEnglish\Words\pleasingly.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\pleasingly.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "adjustable\n[əˈdʒʌs.tə.bl̩]\nрегулируемый, разводной, устанавливаемый";
+            Sound(@"VocaEnglish\Words\adjustable.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\adjustable.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "depose\n[dɪˈpəʊz]\nсмещать, свергать";
+            Sound(@"VocaEnglish\Words\depose.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\depose.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "mitten\n[ˈmɪt.ən]\nрукавица, варежка";
+            Sound(@"VocaEnglish\Words\mitten.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\mitten.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "gambler\n[ˈɡæm.blər]\nигрок, картежник, азартный игрок";
+            Sound(@"VocaEnglish\Words\gambler.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\gambler.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "indecisive\n[ˌɪn.dɪˈsaɪ.sɪv]\nнерешительный, неокончательный, колеблющийся";
+            Sound(@"VocaEnglish\Words\indecisive.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\indecisive.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "revert\n[rɪˈvɜːt]\nвозвращаться, повернуть назад";
+            Sound(@"VocaEnglish\Words\revert.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\revert.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "ripen\n[ˈraɪ.pən]\nсозревать, дозреть, зреть";
+            Sound(@"VocaEnglish\Words\ripen.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\ripen.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "instigator\n[ˈɪn.stɪ.ɡeɪ.tər]\nподстрекатель, зачинщик";
+            Sound(@"VocaEnglish\Words\instigator.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\instigator.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "obstinacy\n[ˈɒb.stɪ.nət]\nупрямство, упорство, настойчивость";
+            Sound(@"VocaEnglish\Words\obstinacy.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\obstinacy.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "sodden\n[ˈsɒd.ən]\nпромокший, пропитанный, сырой";
+            Sound(@"VocaEnglish\Words\sodden.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\sodden.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "flabby\n[ˈflæb.i]\nдряблый, вялый, слабохарактерный";
+            Sound(@"VocaEnglish\Words\flabby.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\flabby.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "imbibe\n[ɪmˈbaɪb]\nвпитывать, поглощать, усваивать";
+            Sound(@"VocaEnglish\Words\imbibe.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\imbibe.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "grace\n[greɪs]\nблагодать";
+            Sound(@"VocaEnglish\Words\grace.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\grace.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            lbText.Content = "boredom\n[ˈbɔːdəm]\nзанудство";
+            Sound(@"VocaEnglish\Words\boredom.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
+
+            Sound(@"VocaEnglish\Words\boredom.wav");
+            await Task.Delay(2000);
+            Stop();
+
+            await Task.Run(() => TimeTextRep());
         }
 
         private async void TimeTextRep()
         {
-            lbSubText.Visibility = Visibility.Visible;
-            lbSubText.Content = "ПОВТОРИТЕ";
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
             await Task.Run(() => TimerRec());
-            lbSubText.Visibility = Visibility.Hidden;
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
 
             Stop();
-            StartFullDuplex();
-            await Task.Delay(1000);
-            lbText.Visibility = Visibility.Hidden;
-            await Task.Delay(1000);
-            lbText.Visibility = Visibility.Visible;
-            await Task.Delay(1000);
-            lbText.Visibility = Visibility.Hidden;
-            await Task.Delay(1000);
-            lbText.Visibility = Visibility.Visible;
-            await Task.Delay(1000);
+            StartFullDuplex1();
+            Thread.Sleep(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            Thread.Sleep(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            Thread.Sleep(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            Thread.Sleep(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            Thread.Sleep(1000);
             Stop();
         }
 
@@ -480,6 +994,34 @@ namespace VocaEnglish
             }
             Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
             Dispatcher.Invoke(() => lbTimer.Visibility = Visibility.Hidden);
+        }
+
+        private void btnPlay_MouseMove(object sender, MouseEventArgs e)
+        {
+            string uri = @"VocaEnglish\Button\button-play-hover.png";
+            ImgBackPlay.ImageSource = new ImageSourceConverter().ConvertFromString(uri) as ImageSource;
+        }
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            ImgBtnTurboClick = 1;
+            EnglishVoca();
+            cmbInput.IsEnabled = false;
+            cmbOutput.IsEnabled = false;
+        }
+
+        private void btnPlay_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (ImgBtnTurboClick == 1)
+            {
+                string uri = @"VocaEnglish\Button\button-play-active.png";
+                ImgBackPlay.ImageSource = new ImageSourceConverter().ConvertFromString(uri) as ImageSource;
+            }
+            else
+            {
+                string uri = @"VocaEnglish\Button\button-play-inactive.png";
+                ImgBackPlay.ImageSource = new ImageSourceConverter().ConvertFromString(uri) as ImageSource;
+            }
         }
 
         //private void TimerPronunciation
