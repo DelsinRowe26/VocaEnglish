@@ -59,9 +59,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ListWords.cs" />
     <Compile Include="LogClass.cs" />
     <Compile Include="MessageBoxSpeak.xaml.cs" />
     <Compile Include="PitchShifterPitch.cs" />
+    <Compile Include="Remember.xaml.cs">
+      <DependentUpon>Remember.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SampleDSPPitch.cs" />
     <Compile Include="SimpleMixer.cs" />
     <Compile Include="SoftCl.cs" />
@@ -81,6 +85,10 @@
     <Page Include="MessageBoxSpeak.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Remember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

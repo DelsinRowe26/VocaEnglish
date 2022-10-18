@@ -316,7 +316,23 @@ namespace VocaEnglish
             lbSubText.Content = "ПОВТОРИТЕ";
             await Task.Run(() => TimerRec());
             lbSubText.Visibility = Visibility.Hidden;*/
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             //На всякий случай мало ли что
 
@@ -324,514 +340,1778 @@ namespace VocaEnglish
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "ferry\n[ˈfer.i]\nпаром, переправа";
             Sound(@"VocaEnglish\Words\ferry.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\ferry.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "dairy\n[ˈdeə.ri]\nмолочная, молочный, маслодельня";
             Sound(@"VocaEnglish\Words\dairy.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\dairy.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "plank\n[plæŋk]\nпланка, доска, обшивная доска или планка";
             Sound(@"VocaEnglish\Words\plank.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\plank.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "wag\n[wæɡ]\n/шутник, взмах, бездельник";
             Sound(@"VocaEnglish\Words\wag.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\wag.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "throttle\n[ˈθrɒt.l̩]\nдушить, дросселировать, задыхаться";
             Sound(@"VocaEnglish\Words\throttle.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\throttle.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "stubble\n[ˈstʌb.əl]\nщетина";
             Sound(@"VocaEnglish\Words\stubble.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\stubble.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "pittance\n[ˈpɪt.əns]\nжалкие гроши, подачка";
             Sound(@"VocaEnglish\Words\pittance.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\pittance.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "midget\n[ˈmɪdʒ.ɪt]\nкарлик, лилипут";
             Sound(@"VocaEnglish\Words\midget.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\midget.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "botch\n[bɒtʃ]\nпортить, неумело латать, делать небрежно";
             Sound(@"VocaEnglish\Words\botch.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\botch.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "prig\n[prɪɡ]\nпедант, формалист";
             Sound(@"VocaEnglish\Words\prig.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\prig.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "soothsayer\n[ˈsuːθˌseɪ.ər]\nпредсказатель, гадалка";
             Sound(@"VocaEnglish\Words\soothsayer.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\soothsayer.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "imbroglio\n[ɪmˈbrəʊ.li.əʊ]\nпутаница, запутанная ситуация, сложная ситуация";
             Sound(@"VocaEnglish\Words\imbroglio.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\imbroglio.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "layer\n[ˈleɪə(r)]\nслой, уровень, пласт";
             Sound(@"VocaEnglish\Words\layer.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\layer.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "delve\n[delv]\nкопаться, рыться, копать";
             Sound(@"VocaEnglish\Words\delve.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\delve.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "disquisition\n[ˌdɪs.kwɪˈzɪʃ.ən]\nисследование, дознание, подробное исследование";
             Sound(@"VocaEnglish\Words\disquisition.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\disquisition.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "winnow\n[ˈwɪn.əʊ]\nвеять, отсеивать";
             Sound(@"VocaEnglish\Words\winnow.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\winnow.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "ugly\n[ˈʌɡli]\nуродливый, безобразный, неприятный";
             Sound(@"VocaEnglish\Words\ugly.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\ugly.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "guard\n[ɡɑːd]\nстража, охрана, гвардия";
             Sound(@"VocaEnglish\Words\guard.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\guard.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "dust\n[dʌst]\nпыль, прах, пыльца";
             Sound(@"VocaEnglish\Words\dust.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\dust.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "interdependent\n[ˌɪn.tə.dɪˈpen.dənt]\nвзаимозависимый, зависящий один от другого";
             Sound(@"VocaEnglish\Words\interdependent.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\interdependent.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "commonality\n[ˌkɒm.ənˈæl.ə.ti]\nобщность";
             Sound(@"VocaEnglish\Words\commonality.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\commonality.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "overreach\n[ˌəʊ.vəˈriːtʃ]\nперехитрить, овладевать";
             Sound(@"VocaEnglish\Words\overreach.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\overreach.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "moth\n[mɒθ]\nмоль, мотылек, ночная бабочка";
             Sound(@"VocaEnglish\Words\moth.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\moth.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "tortoise\n[ˈtɔː.təs]\nчерепаха";
             Sound(@"VocaEnglish\Words\tortoise.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\tortoise.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "pleasingly\n[ˈpliː.zɪŋ]\nприятно";
             Sound(@"VocaEnglish\Words\pleasingly.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\pleasingly.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "adjustable\n[əˈdʒʌs.tə.bl̩]\nрегулируемый, разводной, устанавливаемый";
             Sound(@"VocaEnglish\Words\adjustable.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\adjustable.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "depose\n[dɪˈpəʊz]\nсмещать, свергать";
             Sound(@"VocaEnglish\Words\depose.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\depose.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "mitten\n[ˈmɪt.ən]\nрукавица, варежка";
             Sound(@"VocaEnglish\Words\mitten.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\mitten.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "gambler\n[ˈɡæm.blər]\nигрок, картежник, азартный игрок";
             Sound(@"VocaEnglish\Words\gambler.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\gambler.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "indecisive\n[ˌɪn.dɪˈsaɪ.sɪv]\nнерешительный, неокончательный, колеблющийся";
             Sound(@"VocaEnglish\Words\indecisive.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\indecisive.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "revert\n[rɪˈvɜːt]\nвозвращаться, повернуть назад";
             Sound(@"VocaEnglish\Words\revert.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\revert.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "ripen\n[ˈraɪ.pən]\nсозревать, дозреть, зреть";
             Sound(@"VocaEnglish\Words\ripen.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\ripen.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "instigator\n[ˈɪn.stɪ.ɡeɪ.tər]\nподстрекатель, зачинщик";
             Sound(@"VocaEnglish\Words\instigator.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\instigator.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "obstinacy\n[ˈɒb.stɪ.nət]\nупрямство, упорство, настойчивость";
             Sound(@"VocaEnglish\Words\obstinacy.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\obstinacy.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "sodden\n[ˈsɒd.ən]\nпромокший, пропитанный, сырой";
             Sound(@"VocaEnglish\Words\sodden.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\sodden.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "flabby\n[ˈflæb.i]\nдряблый, вялый, слабохарактерный";
             Sound(@"VocaEnglish\Words\flabby.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\flabby.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "imbibe\n[ɪmˈbaɪb]\nвпитывать, поглощать, усваивать";
             Sound(@"VocaEnglish\Words\imbibe.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\imbibe.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "grace\n[greɪs]\nблагодать";
             Sound(@"VocaEnglish\Words\grace.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\grace.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             lbText.Content = "boredom\n[ˈbɔːdəm]\nзанудство";
             Sound(@"VocaEnglish\Words\boredom.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
 
             Sound(@"VocaEnglish\Words\boredom.wav");
             await Task.Delay(2000);
             Stop();
 
-            await Task.Run(() => TimeTextRep());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+            await Task.Run(() => TimerRec());
+            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+            Stop();
+            StartFullDuplex1();
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
+            await Task.Delay(1000);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            await Task.Delay(1000);
+            Stop();
         }
 
         private async void TimeTextRep()
@@ -843,15 +2123,15 @@ namespace VocaEnglish
 
             Stop();
             StartFullDuplex1();
-            Thread.Sleep(1000);
+            await Task.Delay(1000);
             Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
-            Thread.Sleep(1000);
+            await Task.Delay(1000);
             Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
-            Thread.Sleep(1000);
+            await Task.Delay(1000);
             Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
-            Thread.Sleep(1000);
+            await Task.Delay(1000);
             Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
-            Thread.Sleep(1000);
+            await Task.Delay(1000);
             Stop();
         }
 
@@ -1030,6 +2310,9 @@ namespace VocaEnglish
         {
             try
             {
+                MessageBoxSpeak boxSpeak = new MessageBoxSpeak();
+                boxSpeak.ShowDialog();
+
                 if (SoftCl.IsSoftwareInstalled("Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.32.31332") == false)
                 {
                     Process.Start("VC_redist.x86.exe");
