@@ -2284,10 +2284,12 @@ namespace VocaEnglish
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-            ImgBtnTurboClick = 1;
+            Remember remember = new Remember();
+            remember.ShowDialog();
+            /*ImgBtnTurboClick = 1;
             EnglishVoca();
             cmbInput.IsEnabled = false;
-            cmbOutput.IsEnabled = false;
+            cmbOutput.IsEnabled = false;*/
         }
 
         private void btnPlay_MouseLeave(object sender, MouseEventArgs e)
