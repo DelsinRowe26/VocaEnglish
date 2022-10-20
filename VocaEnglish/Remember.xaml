@@ -15,7 +15,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Button x:Name="btnRemember" Content="Помню" HorizontalAlignment="Left" Margin="32,126,0,0" VerticalAlignment="Top" Height="42" Width="124" FontSize="20" FontWeight="Bold" Click="btnRemember_Click">
+        <Button x:Name="btnRemember" Content="Помню" HorizontalAlignment="Left" Margin="32,126,0,0" VerticalAlignment="Top" Height="42" Width="124" FontSize="20" FontWeight="Bold" Click="btnRemember_Click" IsEnabled="False">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
@@ -23,7 +23,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="btnIdontRemember" Content="Не помню" HorizontalAlignment="Left" Margin="300,126,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="42" Width="124" Click="btnIdontRemember_Click">
+        <Button x:Name="btnIdontRemember" Content="Не помню" HorizontalAlignment="Left" Margin="300,126,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="42" Width="124" Click="btnIdontRemember_Click" IsEnabled="False">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>

@@ -54,7 +54,7 @@ namespace VocaEnglish
             countIdontRemember = 0;
             File.WriteAllText("Data_Remember.tmp", " ");
             File.WriteAllText("Data_IdontRemember.tmp", " ");
-            lbWords.Content = "Сейчас будут появляться слова\nи вы должны нажать\nна одну из кнопок\n";
+            lbWords.Content = "Сейчас будут появляться слова\nи вы должны нажать\nна одну из кнопок\nесли вы помните перевод слова";
             lbWords.Visibility = Visibility.Visible;
             await Task.Delay(5000);
 
@@ -72,12 +72,24 @@ namespace VocaEnglish
 
                 if (RememberBool == true)
                 {
+                    if(countGeneral == 1)
+                    {
+                        countGeneral--;
+                        File.AppendAllText("Data_Remember.tmp", txt[countGeneral].ToString());
+                        countGeneral++;
+                    }
                     RememberBool = false;
                     countRemember++;
                     File.AppendAllText("Data_Remember.tmp", txt[countGeneral].ToString());
                 }
                 else if (dontRemember == true)
                 {
+                    if(countGeneral == 1)
+                    {
+                        countGeneral--;
+                        File.AppendAllText("Data_IdontRemember.tmp", txt[countGeneral].ToString());
+                        countGeneral++;
+                    }
                     dontRemember = false;
                     countIdontRemember++;
                     File.AppendAllText("Data_IdontRemember.tmp", txt[countGeneral].ToString());
@@ -85,8 +97,8 @@ namespace VocaEnglish
             }
             else
             {
-                File.AppendAllText("Data_Remember.tmp", countRemember.ToString());
-                File.AppendAllText("Data_IdontRemember.tmp", countIdontRemember.ToString());
+                File.AppendAllText("Data_Remember.tmp", "\n" + countRemember.ToString());
+                File.AppendAllText("Data_IdontRemember.tmp", "\n" + countIdontRemember.ToString());
                 Close();
             }
         }

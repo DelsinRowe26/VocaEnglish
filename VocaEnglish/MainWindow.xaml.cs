@@ -227,7 +227,7 @@ namespace VocaEnglish
                 //Init DSP для смещения высоты тона
                 mDspPitch = new SampleDSPPitch(source.ToSampleSource().ToMono());
 
-                SetPitchShiftValue();
+                //SetPitchShiftValue();
 
                 //Инициальный микшер
                 Mixer();
@@ -293,7 +293,7 @@ namespace VocaEnglish
 
             btnPlay.Visibility = Visibility.Hidden;
 
-            /*lbText.Content = "Сейчас начнется трёх минутная подготовка";
+            lbText.Content = "Сейчас начнется трёх минутная подготовка";
             lbText.Visibility = Visibility.Visible;
             await Task.Delay(3000);
             lbText.Visibility = Visibility.Hidden; 
@@ -301,7 +301,7 @@ namespace VocaEnglish
             Stop();
             StartFullDuplex();
             await Task.Run(() => PitchTimerFeelInTheBody());
-            Stop();*/
+            Stop();
 
             lbText.Content = "Хорошо. Сейчас начнут появляться слова на экране\nслушайте их, и повторняйте их, после фразы 'ПОВТОРИТЕ'";
             lbText.Visibility = Visibility.Visible;
@@ -2112,6 +2112,10 @@ namespace VocaEnglish
             Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
             await Task.Delay(1000);
             Stop();
+
+            Remember remember = new Remember();
+            remember.ShowDialog();
+            Close();
         }
 
         private async void TimeTextRep()
@@ -2229,13 +2233,13 @@ namespace VocaEnglish
 
                 if (langindex == "0")
                 {
-                    Title = "ReSelf - Ментальный детокс";
+                    //Title = "ReSelf - Ментальный детокс";
                     lbMicrophone.Content = "Выбор микрофона";
                     lbSpeaker.Content = "Выбор динамиков";
                 }
                 else
                 {
-                    Title = "ReSelf - Mental detox";
+                    //Title = "ReSelf - Mental detox";
                     lbMicrophone.Content = "Microphone selection";
                     lbSpeaker.Content = "Speaker selection";
                 }
@@ -2284,12 +2288,12 @@ namespace VocaEnglish
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-            Remember remember = new Remember();
-            remember.ShowDialog();
-            /*ImgBtnTurboClick = 1;
+            /*Remember remember = new Remember();
+            remember.ShowDialog();*/
+            ImgBtnTurboClick = 1;
             EnglishVoca();
             cmbInput.IsEnabled = false;
-            cmbOutput.IsEnabled = false;*/
+            cmbOutput.IsEnabled = false;
         }
 
         private void btnPlay_MouseLeave(object sender, MouseEventArgs e)

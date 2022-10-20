@@ -8,12 +8,12 @@ using System.Windows;
 // набор атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("VocaEnglish")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Learning English words.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Neurotuners")]
 [assembly: AssemblyProduct("VocaEnglish")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Neurotuners technologies")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
