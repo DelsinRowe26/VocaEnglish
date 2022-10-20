@@ -13,19 +13,21 @@ namespace VocaEnglish
         public static string[] EnWords = new string[40];
         public static string[] RuWords = new string[40];
         public static string[] Transcription = new string[40];
+        public static int Values;
 
         public void List()
         {
-            StreamReader fileName = new StreamReader(@"VocaEnglish\Words\ListWords.txt", System.Text.Encoding.Default);
+            StreamReader fileName = new StreamReader(@"VocaEnglish\Words\ListWords.txt", System.Text.Encoding.UTF8);
             int Nlines = File.ReadAllLines(@"VocaEnglish\Words\ListWords.txt").Length;
-            string[] txt = fileName.ReadToEnd().Split(new char[] { '/', ';' }, StringSplitOptions.None);
+            string[] txt = fileName.ReadToEnd().Split(new char[] { '/', ';' }, StringSplitOptions.RemoveEmptyEntries);
             int Nvalues = txt.Length;
+            Values = Nlines;
 
             for (int p = 0, q = 0, r = 1, e = 2; p < Nlines && q < Nvalues && r < Nvalues && e < Nvalues; p++, q += 3, r += 3, e += 3)
             {
-                EnWords[p] = txt[q];
-                RuWords[p] = txt[r];
-                Transcription[p] = txt[e];
+                EnWords[p] = txt[q].ToString();
+                RuWords[p] = txt[r].ToString();
+                Transcription[p] = txt[e].ToString();
             }
         }
     }
