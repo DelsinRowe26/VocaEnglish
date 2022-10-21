@@ -25,8 +25,8 @@ namespace VocaEnglish
 
             for (int p = 0, q = 0, r = 1, e = 2; p < Nlines && q < Nvalues && r < Nvalues && e < Nvalues; p++, q += 3, r += 3, e += 3)
             {
-                EnWords[p] = txt[q].ToString();
-                RuWords[p] = txt[r].ToString();
+                EnWords[p] = txt[r].ToString();
+                RuWords[p] = txt[q].ToString();
                 Transcription[p] = txt[e].ToString();
             }
         }
