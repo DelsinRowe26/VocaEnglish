@@ -22,6 +22,7 @@ using CSCore.SoundOut;
 using CSCore.Streams.Effects;
 using CSCore.Streams;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace VocaEnglish
 {
@@ -30,6 +31,15 @@ namespace VocaEnglish
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("winmm.dll")]
+        public static extern int waveOutGetVolume(IntPtr hwo, out uint pdwVolume);
+
+        [DllImport("winmm.dll")]
+        public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
 
         private FileInfo fileInfo = new FileInfo("window.tmp");
         private FileInfo fileInfo1 = new FileInfo("Data_Load.tmp");
@@ -226,9 +236,9 @@ namespace VocaEnglish
 
                 //Init DSP для смещения высоты тона
                 mDspPitch = new SampleDSPPitch(source.ToSampleSource().ToMono());
-                pitchVal = -1.5f;
+                //pitchVal = -1.5f;
 
-                SetPitchShiftValue();
+                //SetPitchShiftValue();
 
                 //Инициальный микшер
                 Mixer();
@@ -283,9 +293,13 @@ namespace VocaEnglish
                 Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
                 Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Hidden);
                 Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Hidden);
+                pitchVal = -1.5f;
+                SetPitchShiftValue();
                 Thread.Sleep(500);
                 Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Visible);
                 Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Visible);
+                pitchVal = 1.5f;
+                SetPitchShiftValue();
                 Thread.Sleep(500);
                 i--;
             }
