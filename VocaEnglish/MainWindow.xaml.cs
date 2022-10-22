@@ -298,18 +298,42 @@ namespace VocaEnglish
                 Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
                 Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Hidden);
                 Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Hidden);
-                pitchVal = -1.0f;
-                SetPitchShiftValue();
+                /*pitchVal = -1.0f;
+                SetPitchShiftValue();*/
                 Thread.Sleep(500);
                 Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Visible);
                 Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Visible);
-                pitchVal = 1.0f;
-                SetPitchShiftValue();
+                /*pitchVal = 1.0f;
+                SetPitchShiftValue();*/
                 Thread.Sleep(500);
                 i--;
             }
             Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
             Dispatcher.Invoke(() => lbTimer.Visibility = Visibility.Hidden);
+        }
+
+        private async void PitchStep()
+        {
+            int i = 4;
+            while (i > 0)
+            {
+                pitchVal = -1.0f;
+                SetPitchShiftValue();
+                await Task.Delay(500);
+                pitchVal += 0.5f;
+                SetPitchShiftValue();
+                await Task.Delay(500);
+                pitchVal += 0.5f;
+                SetPitchShiftValue();
+                await Task.Delay(500);
+                pitchVal += 0.5f;
+                SetPitchShiftValue();
+                await Task.Delay(500);
+                pitchVal += 0.5f;
+                SetPitchShiftValue();
+                await Task.Delay(500);
+                i--;
+            }
         }
 
         private async void EnglishVoca()
@@ -356,6 +380,7 @@ namespace VocaEnglish
                     Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
                     StartFullDuplex1();
                     await Task.Run(() => TimerRec());
+                    await Task.Run(() => PitchStep());
                     Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
 
                     Stop();

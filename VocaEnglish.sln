@@ -9,6 +9,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "VocaEnglish v.1.0.0.0 Setup
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "VocaEnglish v.1.0.0.1 Setup", "VocaEnglish v.1.0.0.1 Setup\VocaEnglish v.1.0.0.1 Setup.vdproj", "{28FBA0C0-350B-492D-9518-4DD782D1A5A2}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "VocaEnglish v.1.0.0.2 Setup", "VocaEnglish v.1.0.0.2 Setup\VocaEnglish v.1.0.0.2 Setup.vdproj", "{32E5598F-BB98-4FB4-BA19-8D4512C285D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,8 @@ Global
 		{C99E604D-C5AF-44DC-9F86-6A509EA82B4D}.Release|Any CPU.ActiveCfg = Release
 		{28FBA0C0-350B-492D-9518-4DD782D1A5A2}.Debug|Any CPU.ActiveCfg = Debug
 		{28FBA0C0-350B-492D-9518-4DD782D1A5A2}.Release|Any CPU.ActiveCfg = Release
+		{32E5598F-BB98-4FB4-BA19-8D4512C285D9}.Debug|Any CPU.ActiveCfg = Debug
+		{32E5598F-BB98-4FB4-BA19-8D4512C285D9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
