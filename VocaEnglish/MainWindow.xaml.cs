@@ -23,6 +23,7 @@ using CSCore.Streams.Effects;
 using CSCore.Streams;
 using System.Threading;
 using System.Runtime.InteropServices;
+using System.Windows.Interop;
 
 namespace VocaEnglish
 {
@@ -61,6 +62,10 @@ namespace VocaEnglish
         private int SampleRate, SoundClick = 0, ImgBtnTurboClick = 0, countRepeat = 0, countMassive = 0;
 
         string langindex;
+
+        private const int APPCOMMAND_VOLUME_UP = 0xA0000;
+        private const int APPCOMMAND_VOLUME_DOWN = 0x90000;
+        private const int WM_APPCOMMAND = 0x319;
 
         public MainWindow()
         {
@@ -293,12 +298,12 @@ namespace VocaEnglish
                 Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
                 Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Hidden);
                 Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Hidden);
-                pitchVal = -1.5f;
+                pitchVal = -1.0f;
                 SetPitchShiftValue();
                 Thread.Sleep(500);
                 Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Visible);
                 Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Visible);
-                pitchVal = 1.5f;
+                pitchVal = 1.0f;
                 SetPitchShiftValue();
                 Thread.Sleep(500);
                 i--;
@@ -315,7 +320,7 @@ namespace VocaEnglish
 
             lbSubText.Content = "Сейчас начнется трёх минутная подготовка\n                         голоса и слуха\n                     держите звук 'ААА'";
             lbSubText.Visibility = Visibility.Visible;
-            await Task.Delay(3000);
+            await Task.Delay(6000);
             lbSubText.Visibility = Visibility.Hidden; 
 
             Stop();
@@ -368,27 +373,6 @@ namespace VocaEnglish
                 Close();
             });
             
-        }
-
-        private async void TimeTextRep()
-        {
-            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
-            Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
-            await Task.Run(() => TimerRec());
-            Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
-
-            Stop();
-            StartFullDuplex1();
-            await Task.Delay(1000);
-            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
-            await Task.Delay(1000);
-            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
-            await Task.Delay(1000);
-            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Hidden);
-            await Task.Delay(1000);
-            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
-            await Task.Delay(1000);
-            Stop();
         }
 
         private void Stop()
@@ -558,6 +542,50 @@ namespace VocaEnglish
             
         }
 
+        private void btnIncVol_Click(object sender, RoutedEventArgs e)
+        {
+            var wih = new WindowInteropHelper(this);
+            var hWnd = wih.Handle;
+            SendMessageW(hWnd, WM_APPCOMMAND, hWnd, (IntPtr)APPCOMMAND_VOLUME_UP);
+
+            string uri = @"VocaEnglish\Button\button-soundup-active.png";
+            ImgBtnIncVol.ImageSource = new ImageSourceConverter().ConvertFromString(uri) as ImageSource;
+        }
+
+        private void btnDecVol_Click(object sender, RoutedEventArgs e)
+        {
+            var wih = new WindowInteropHelper(this);
+            var hWnd = wih.Handle;
+            SendMessageW(hWnd, WM_APPCOMMAND, hWnd, (IntPtr)APPCOMMAND_VOLUME_DOWN);
+
+            string uri = @"VocaEnglish\Button\button-sounddown-active.png";
+            ImgBtnDecVol.ImageSource = new ImageSourceConverter().ConvertFromString(uri) as ImageSource;
+        }
+
+        private void btnIncVol_MouseMove(object sender, MouseEventArgs e)
+        {
+            string uri = @"VocaEnglish\Button\button-soundup-hover.png";
+            ImgBtnIncVol.ImageSource = new ImageSourceConverter().ConvertFromString(uri) as ImageSource;
+        }
+
+        private void btnIncVol_MouseLeave(object sender, MouseEventArgs e)
+        {
+            string uri = @"VocaEnglish\Button\button-soundup-inactive.png";
+            ImgBtnIncVol.ImageSource = new ImageSourceConverter().ConvertFromString(uri) as ImageSource;
+        }
+
+        private void btnDecVol_MouseMove(object sender, MouseEventArgs e)
+        {
+            string uri = @"VocaEnglish\Button\button-sounddown-hover.png";
+            ImgBtnDecVol.ImageSource = new ImageSourceConverter().ConvertFromString(uri) as ImageSource;
+        }
+
+        private void btnDecVol_MouseLeave(object sender, MouseEventArgs e)
+        {
+            string uri = @"VocaEnglish\Button\button-sounddown-inactive.png";
+            ImgBtnDecVol.ImageSource = new ImageSourceConverter().ConvertFromString(uri) as ImageSource;
+        }
+
         private void btnPlay_MouseLeave(object sender, MouseEventArgs e)
         {
             if (ImgBtnTurboClick == 1)
@@ -572,6 +600,29 @@ namespace VocaEnglish
             }
         }
 
+        private void VolDec()
+        {
+            int i = 50;
+            while(i > 0) {
+                var wih = new WindowInteropHelper(this);
+                var hWnd = wih.Handle;
+                SendMessageW(hWnd, WM_APPCOMMAND, hWnd, (IntPtr)APPCOMMAND_VOLUME_DOWN);
+                i--;
+            }
+        }
+
+        private void VolInc()
+        {
+            int i = 0;
+            while (i < 10)
+            {
+                var wih = new WindowInteropHelper(this);
+                var hWnd = wih.Handle;
+                SendMessageW(hWnd, WM_APPCOMMAND, hWnd, (IntPtr)APPCOMMAND_VOLUME_UP);
+                i++;
+            }
+        }
+
         //private void TimerPronunciation
 
         private void VocaEnglish_Loaded(object sender, RoutedEventArgs e)
@@ -580,6 +631,8 @@ namespace VocaEnglish
             {
                 MessageBoxSpeak boxSpeak = new MessageBoxSpeak();
                 boxSpeak.ShowDialog();
+
+                
 
                 if (SoftCl.IsSoftwareInstalled("Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.32.31332") == false)
                 {
@@ -609,6 +662,9 @@ namespace VocaEnglish
                     if (device.DeviceID == activeDevice.DeviceID) cmbOutput.SelectedIndex = cmbOutput.Items.Count - 1;
                 }
 
+                VolDec();
+
+                VolInc();
                 ListWords list = new ListWords();
                 list.List();
 

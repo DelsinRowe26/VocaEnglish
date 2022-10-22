@@ -126,5 +126,11 @@
   <ItemGroup>
     <Resource Include="logo.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="button-soundup-inactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="button-sounddown-inactive.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

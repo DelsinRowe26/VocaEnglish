@@ -59,5 +59,25 @@
         </Label>
         <Label x:Name="lbTranscription" Content="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,239,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="400" Visibility="Hidden"/>
         <Label x:Name="lbRussianWords" Content="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,287,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="400" Visibility="Hidden"/>
+        <Button x:Name="btnIncVol" Content="Button" HorizontalAlignment="Left" Margin="209,376,0,0" VerticalAlignment="Top" Width="54" Height="54" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="btnIncVol_Click" MouseMove="btnIncVol_MouseMove" MouseLeave="btnIncVol_MouseLeave">
+            <Button.Background>
+                <ImageBrush x:Name="ImgBtnIncVol" ImageSource="/button-soundup-inactive.png"/>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}" Width="54" Height="54"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnDecVol" Content="Button" HorizontalAlignment="Left" Margin="362,376,0,0" VerticalAlignment="Top" Height="54" Width="54" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="btnDecVol_Click" MouseMove="btnDecVol_MouseMove" MouseLeave="btnDecVol_MouseLeave">
+            <Button.Background>
+                <ImageBrush x:Name="ImgBtnDecVol" ImageSource="/button-sounddown-inactive.png"/>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}" Width="54" Height="54"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Window>
