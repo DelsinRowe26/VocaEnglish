@@ -36,12 +36,6 @@ namespace VocaEnglish
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
 
-        [DllImport("winmm.dll")]
-        public static extern int waveOutGetVolume(IntPtr hwo, out uint pdwVolume);
-
-        [DllImport("winmm.dll")]
-        public static extern int waveOutSetVolume(IntPtr hwo, uint dwVolume);
-
         private FileInfo fileInfo = new FileInfo("window.tmp");
         private FileInfo fileInfo1 = new FileInfo("Data_Load.tmp");
         private FileInfo FileLanguage = new FileInfo("Data_Language.tmp");
