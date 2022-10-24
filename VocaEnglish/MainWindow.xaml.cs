@@ -24,6 +24,7 @@ using CSCore.Streams;
 using System.Threading;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
+using System.Security.Policy;
 
 namespace VocaEnglish
 {
@@ -297,15 +298,17 @@ namespace VocaEnglish
             {
                 Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
                 Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Hidden);
-                Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Hidden);
+                
+                //Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Hidden);
                 /*pitchVal = -1.0f;
                 SetPitchShiftValue();*/
                 Thread.Sleep(500);
                 Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Visible);
-                Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Visible);
+                //Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Visible);
                 /*pitchVal = 1.0f;
                 SetPitchShiftValue();*/
                 Thread.Sleep(500);
+                
                 i--;
             }
             Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
@@ -319,12 +322,14 @@ namespace VocaEnglish
             {
                 pitchVal = -1.0f;
                 SetPitchShiftValue();
+                Dispatcher.Invoke(() => lbText.Content = ListWords.RuWords[countMassive]);
                 await Task.Delay(500);
                 pitchVal += 0.5f;
                 SetPitchShiftValue();
                 await Task.Delay(500);
                 pitchVal += 0.5f;
                 SetPitchShiftValue();
+                Dispatcher.Invoke(() => lbText.Content = ListWords.EnWords[countMassive]);
                 await Task.Delay(500);
                 pitchVal += 0.5f;
                 SetPitchShiftValue();
@@ -342,7 +347,7 @@ namespace VocaEnglish
 
             btnPlay.Visibility = Visibility.Hidden;
 
-            lbSubText.Content = "Сейчас начнется трёх минутная подготовка\n                         голоса и слуха\n                     держите звук 'ААА'";
+            /*lbSubText.Content = "Сейчас начнется трёх минутная подготовка\n                         голоса и слуха\n                     держите звук 'ААА'";
             lbSubText.Visibility = Visibility.Visible;
             await Task.Delay(6000);
             lbSubText.Visibility = Visibility.Hidden; 
@@ -350,7 +355,7 @@ namespace VocaEnglish
             Stop();
             StartFullDuplex();
             await Task.Run(() => PitchTimerFeelInTheBody());
-            Stop();
+            Stop();*/
 
             lbSubText.Content = "      Хорошо. Сейчас начнут появляться слова на экране\nслушайте их, и повторняйте их, после фразы 'ПОВТОРИТЕ'";
             lbSubText.Visibility = Visibility.Visible;
@@ -362,7 +367,7 @@ namespace VocaEnglish
 
         private async void EnglishVocaSuper()
         {
-            Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Visible);
+            //Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Visible);
             Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Visible);
             Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
             while (countMassive < ListWords.Values)
@@ -371,10 +376,12 @@ namespace VocaEnglish
                 {
                     Dispatcher.Invoke(() => lbText.Content = ListWords.EnWords[countMassive]);
                     Dispatcher.Invoke(() => lbTranscription.Content = ListWords.Transcription[countMassive]);
-                    Dispatcher.Invoke(() => lbRussianWords.Content = ListWords.RuWords[countMassive]);
+                    //Dispatcher.Invoke(() => lbRussianWords.Content = ListWords.RuWords[countMassive]);
                     Sound(@"VocaEnglish\Words\" + ListWords.EnWords[countMassive] + ".wav");
                     await Task.Delay(2000);
                     Stop();
+                    string uri = @"VocaEnglish\Image\" + ListWords.EnWords[countMassive] + ".jpg";
+                    Dispatcher.Invoke(() => ImgPicture.Source = new ImageSourceConverter().ConvertFromString(uri) as ImageSource);
 
                     Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
                     Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
