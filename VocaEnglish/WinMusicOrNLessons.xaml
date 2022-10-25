@@ -1,0 +1,35 @@
+﻿<Window x:Class="VocaEnglish.WinMusicOrNLessons"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VocaEnglish"
+        mc:Ignorable="d" Height="210" Width="530" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock x:Name="tblNLesOrMusic" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Первый урок закончился. Сейчас начнет играть музыка, после окончания музыки можно будет начать второй урок. Либо его можно будет начать прямо сейчас." VerticalAlignment="Top" Height="99" Width="448" FontSize="16" FontWeight="Bold">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF100B7"/>
+                    <GradientStop Color="#FF8D00FF" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Button x:Name="btnWait" Content="Подождать" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Height="30" Width="130" FontWeight="Bold" FontSize="14" Click="btnWait_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF100B7"/>
+                    <GradientStop Color="#FF8D00FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="btnNextLessons" Content="Следующий урок" HorizontalAlignment="Left" Margin="328,114,0,0" VerticalAlignment="Top" Height="30" Width="130" FontWeight="Bold" FontSize="14" Click="btnNextLessons_Click">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF100B7"/>
+                    <GradientStop Color="#FF8D00FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+
+    </Grid>
+</Window>

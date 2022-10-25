@@ -25,6 +25,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using System.Security.Policy;
+using System.Windows.Media.Media3D;
 
 namespace VocaEnglish
 {
@@ -64,6 +65,8 @@ namespace VocaEnglish
 
         string langindex;
 
+        private double VolRight = 0, VolLeft = 0;
+
         private const int APPCOMMAND_VOLUME_UP = 0xA0000;
         private const int APPCOMMAND_VOLUME_DOWN = 0x90000;
         private const int WM_APPCOMMAND = 0x319;
@@ -71,6 +74,32 @@ namespace VocaEnglish
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ShowCurrentVolume()
+        {
+
+            uint volume;
+            waveOutGetVolume(IntPtr.Zero, out volume);
+            int right = (int)((volume >> 16) & 0xFFFF);
+            int left = (int)(volume & 0xFFFF);
+            VolLeft = left;
+            VolRight = right;
+
+        }
+
+        private void SetVolume()
+        {
+            uint volume = (uint)(VolLeft + ((int)VolRight << 16));
+            waveOutSetVolume(IntPtr.Zero, volume);
+        }//не нужно
+
+        private void Autobalance()
+        {
+            int volume = (int)(VolLeft + VolRight) / 2;
+            VolLeft = volume;
+            VolRight = volume;
+            SetVolume();
         }
 
         private void SoundIn()
@@ -290,25 +319,28 @@ namespace VocaEnglish
             reverbVal = 150;
         }
 
-        private void TimerRec()
+        private async void TimerRec()
         {
+            //await Task.Run(() => PitchStep());
             Dispatcher.Invoke(() => lbTimer.Visibility = Visibility.Visible);
             int i = 10;
             while (i > 0)
             {
                 Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
                 Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Hidden);
-                
+
                 //Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Hidden);
                 /*pitchVal = -1.0f;
                 SetPitchShiftValue();*/
                 Thread.Sleep(500);
+                //await Task.Delay(500);
                 Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Visible);
                 //Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Visible);
                 /*pitchVal = 1.0f;
                 SetPitchShiftValue();*/
                 Thread.Sleep(500);
-                
+                //await Task.Delay(500);
+
                 i--;
             }
             Dispatcher.Invoke(() => lbTimer.Content = i.ToString());
@@ -322,19 +354,20 @@ namespace VocaEnglish
             {
                 pitchVal = -1.0f;
                 SetPitchShiftValue();
+                
+                await Task.Delay(500);
+                pitchVal += 0.5f;
+                SetPitchShiftValue();
+                await Task.Delay(500);
+                pitchVal += 0.5f;
+                SetPitchShiftValue();
                 Dispatcher.Invoke(() => lbText.Content = ListWords.RuWords[countMassive]);
                 await Task.Delay(500);
                 pitchVal += 0.5f;
                 SetPitchShiftValue();
                 await Task.Delay(500);
                 pitchVal += 0.5f;
-                SetPitchShiftValue();
                 Dispatcher.Invoke(() => lbText.Content = ListWords.EnWords[countMassive]);
-                await Task.Delay(500);
-                pitchVal += 0.5f;
-                SetPitchShiftValue();
-                await Task.Delay(500);
-                pitchVal += 0.5f;
                 SetPitchShiftValue();
                 await Task.Delay(500);
                 i--;
@@ -347,7 +380,7 @@ namespace VocaEnglish
 
             btnPlay.Visibility = Visibility.Hidden;
 
-            /*lbSubText.Content = "Сейчас начнется трёх минутная подготовка\n                         голоса и слуха\n                     держите звук 'ААА'";
+            lbSubText.Content = "Сейчас начнется трёх минутная подготовка\n                         голоса и слуха\n                     держите звук 'ААА'";
             lbSubText.Visibility = Visibility.Visible;
             await Task.Delay(6000);
             lbSubText.Visibility = Visibility.Hidden; 
@@ -355,9 +388,9 @@ namespace VocaEnglish
             Stop();
             StartFullDuplex();
             await Task.Run(() => PitchTimerFeelInTheBody());
-            Stop();*/
+            Stop();
 
-            lbSubText.Content = "      Хорошо. Сейчас начнут появляться слова на экране\nслушайте их, и повторняйте их, после фразы 'ПОВТОРИТЕ'";
+            lbSubText.Content = "               Повторяйте позы с картинок,\nи произносите слова после фразы 'ПОВТОРИТЕ'";
             lbSubText.Visibility = Visibility.Visible;
             await Task.Delay(6000);
 
@@ -374,6 +407,95 @@ namespace VocaEnglish
             {
                 while (countRepeat < 2)
                 {
+                        VolLeft = 39321;
+                        VolRight = 0;
+                        SetVolume();
+
+                        Dispatcher.Invoke(() => lbText.Content = ListWords.EnWords[countMassive]);
+                        Dispatcher.Invoke(() => lbTranscription.Content = ListWords.Transcription[countMassive]);
+                        //Dispatcher.Invoke(() => lbRussianWords.Content = ListWords.RuWords[countMassive]);
+                        Sound(@"VocaEnglish\Words\" + ListWords.EnWords[countMassive] + ".wav");
+                        await Task.Delay(2000);
+                        Stop();
+                        string uri = @"VocaEnglish\Image\" + ListWords.EnWords[countMassive] + ".jpg";
+                        Dispatcher.Invoke(() => ImgPicture.Source = new ImageSourceConverter().ConvertFromString(uri) as ImageSource);
+
+                        VolLeft = 0;
+                        VolRight = 39321;
+                        SetVolume();
+
+                        Dispatcher.Invoke(() => lbText.Content = ListWords.EnWords[countMassive]);
+                        Dispatcher.Invoke(() => lbTranscription.Content = ListWords.Transcription[countMassive]);
+                        //Dispatcher.Invoke(() => lbRussianWords.Content = ListWords.RuWords[countMassive]);
+                        Sound(@"VocaEnglish\Words\" + ListWords.EnWords[countMassive] + ".wav");
+                        await Task.Delay(2000);
+                        Stop();
+
+                        VolLeft = 39321;
+                        VolRight = 39321;
+                        Autobalance();
+
+                        Dispatcher.Invoke(() => lbText.Content = ListWords.EnWords[countMassive]);
+                        Dispatcher.Invoke(() => lbTranscription.Content = ListWords.Transcription[countMassive]);
+                        //Dispatcher.Invoke(() => lbRussianWords.Content = ListWords.RuWords[countMassive]);
+                        Sound(@"VocaEnglish\Words\" + ListWords.EnWords[countMassive] + ".wav");
+                        await Task.Delay(2000);
+                        Stop();
+
+                        Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
+                        Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+                        StartFullDuplex1();
+                    await Task.Run(() => PitchStep());
+                    await Task.Run(() => TimerRec());
+                        
+                        Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
+
+                        Stop();
+                    
+                    countRepeat++;
+                }
+                countRepeat = 0;
+                if(countMassive == 18)
+                {
+                    break;
+                }
+                countMassive++;
+            }
+            await Task.Delay(2000);
+
+            Sound(@"VocaEnglish\Words\tunetank.com_4231_sweet-heat_by_decibel.mp3");
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                WinMusicOrNLessons lessons = new WinMusicOrNLessons();
+                lessons.ShowDialog();
+                
+            });
+
+            await Task.Delay(122000);
+
+            Application.Current.Dispatcher.Invoke(() => 
+            { 
+                NextLessons remember = new NextLessons();
+                remember.ShowDialog();
+                
+            });
+            
+        }
+
+        private async void EnglishVocaSuper2()
+        {
+            //Dispatcher.Invoke(() => lbRussianWords.Visibility = Visibility.Visible);
+            countMassive = 19;
+            Dispatcher.Invoke(() => lbTranscription.Visibility = Visibility.Visible);
+            Dispatcher.Invoke(() => lbText.Visibility = Visibility.Visible);
+            while (countMassive < ListWords.Values)
+            {
+                while (countRepeat < 2)
+                {
+                    VolLeft = 39321;
+                    VolRight = 0;
+                    SetVolume();
+
                     Dispatcher.Invoke(() => lbText.Content = ListWords.EnWords[countMassive]);
                     Dispatcher.Invoke(() => lbTranscription.Content = ListWords.Transcription[countMassive]);
                     //Dispatcher.Invoke(() => lbRussianWords.Content = ListWords.RuWords[countMassive]);
@@ -383,11 +505,34 @@ namespace VocaEnglish
                     string uri = @"VocaEnglish\Image\" + ListWords.EnWords[countMassive] + ".jpg";
                     Dispatcher.Invoke(() => ImgPicture.Source = new ImageSourceConverter().ConvertFromString(uri) as ImageSource);
 
+                    VolLeft = 0;
+                    VolRight = 39321;
+                    SetVolume();
+
+                    Dispatcher.Invoke(() => lbText.Content = ListWords.EnWords[countMassive]);
+                    Dispatcher.Invoke(() => lbTranscription.Content = ListWords.Transcription[countMassive]);
+                    //Dispatcher.Invoke(() => lbRussianWords.Content = ListWords.RuWords[countMassive]);
+                    Sound(@"VocaEnglish\Words\" + ListWords.EnWords[countMassive] + ".wav");
+                    await Task.Delay(2000);
+                    Stop();
+
+                    VolLeft = 39321;
+                    VolRight = 39321;
+                    Autobalance();
+
+                    Dispatcher.Invoke(() => lbText.Content = ListWords.EnWords[countMassive]);
+                    Dispatcher.Invoke(() => lbTranscription.Content = ListWords.Transcription[countMassive]);
+                    //Dispatcher.Invoke(() => lbRussianWords.Content = ListWords.RuWords[countMassive]);
+                    Sound(@"VocaEnglish\Words\" + ListWords.EnWords[countMassive] + ".wav");
+                    await Task.Delay(2000);
+                    Stop();
+
                     Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
                     Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
                     StartFullDuplex1();
-                    await Task.Run(() => TimerRec());
                     await Task.Run(() => PitchStep());
+                    await Task.Run(() => TimerRec());
+
                     Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Hidden);
 
                     Stop();
@@ -398,13 +543,14 @@ namespace VocaEnglish
                 countMassive++;
             }
             await Task.Delay(2000);
-            Application.Current.Dispatcher.Invoke(() => 
-            { 
+
+            Application.Current.Dispatcher.Invoke(() =>
+            {
                 Remember remember = new Remember();
                 remember.ShowDialog();
                 Close();
             });
-            
+
         }
 
         private void Stop()
@@ -612,6 +758,20 @@ namespace VocaEnglish
             ImgBtnDecVol.ImageSource = new ImageSourceConverter().ConvertFromString(uri) as ImageSource;
         }
 
+        private void VocaEnglish_Activated(object sender, EventArgs e)
+        {
+            if (WinMusicOrNLessons.ClickNextLessons == 1)
+            {
+                WinMusicOrNLessons.ClickNextLessons = 0;
+                Stop();
+                EnglishVocaSuper2();
+            }
+            else if (NextLessons.ClickLessons == 1)
+            {
+                Close();
+            }
+        }
+
         private void btnDecVol_MouseLeave(object sender, MouseEventArgs e)
         {
             string uri = @"VocaEnglish\Button\button-sounddown-inactive.png";
@@ -717,6 +877,7 @@ namespace VocaEnglish
                         File.WriteAllText("log.tmp", " ");
                     }
                 }
+                ShowCurrentVolume();
             }
             catch (Exception ex)
             {

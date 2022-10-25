@@ -65,6 +65,9 @@
     <Compile Include="ListWords.cs" />
     <Compile Include="LogClass.cs" />
     <Compile Include="MessageBoxSpeak.xaml.cs" />
+    <Compile Include="NextLessons.xaml.cs">
+      <DependentUpon>NextLessons.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PitchShifterPitch.cs" />
     <Compile Include="Remember.xaml.cs">
       <DependentUpon>Remember.xaml</DependentUpon>
@@ -73,6 +76,9 @@
     <Compile Include="SimpleMixer.cs" />
     <Compile Include="SoftCl.cs" />
     <Compile Include="TembroClass.cs" />
+    <Compile Include="WinMusicOrNLessons.xaml.cs">
+      <DependentUpon>WinMusicOrNLessons.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,7 +95,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="NextLessons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Remember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinMusicOrNLessons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VocaEnglish"
         mc:Ignorable="d"
-        Title="VocaEnglish" Height="653" Width="641" ResizeMode="NoResize" Loaded="VocaEnglish_Loaded" Closing="VocaEnglish_Closing">
+        Title="VocaEnglish" Height="653" Width="641" ResizeMode="NoResize" Loaded="VocaEnglish_Loaded" Closing="VocaEnglish_Closing" Activated="VocaEnglish_Activated">
     <Grid>
         <Button x:Name="btnPlay" Content="Button" HorizontalAlignment="Center" Margin="0,539,0,0" VerticalAlignment="Top" Width="54" Height="54" BorderBrush="{x:Null}" Foreground="{x:Null}" MouseMove="btnPlay_MouseMove" MouseLeave="btnPlay_MouseLeave" Click="btnPlay_Click">
             <Button.Background>
@@ -17,23 +17,23 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ComboBox x:Name="cmbInput" HorizontalAlignment="Center" Margin="0,259,0,0" VerticalAlignment="Top" Width="200" Visibility="Hidden" ToolTip="Microphone">
+        <ComboBox x:Name="cmbInput" HorizontalAlignment="Center" Margin="0,259,0,0" VerticalAlignment="Top" Width="200" Visibility="Visible" ToolTip="Microphone">
             <ComboBox.Style>
                 <Style>
                     <Setter Property="Control.Background" Value="Gainsboro"/>
                 </Style>
             </ComboBox.Style>
         </ComboBox>
-        <ComboBox x:Name="cmbOutput" HorizontalAlignment="Center" Margin="0,341,0,0" VerticalAlignment="Top" Width="200" ToolTip="Speaker" Visibility="Hidden">
+        <ComboBox x:Name="cmbOutput" HorizontalAlignment="Center" Margin="0,341,0,0" VerticalAlignment="Top" Width="200" ToolTip="Speaker" Visibility="Visible">
             <ComboBox.Style>
                 <Style>
                     <Setter Property="Control.Background" Value="Gainsboro"/>
                 </Style>
             </ComboBox.Style>
         </ComboBox>
-        <Label x:Name="lbMicrophone" Content="Microphone selection" HorizontalAlignment="Center" Margin="0,228,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Visibility="Hidden"/>
-        <Label x:Name="lbSpeaker" Content="Speaker selection" HorizontalAlignment="Center" Margin="0,315,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Visibility="Hidden"/>
-        <Label x:Name="lbTimer" Content="0" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" HorizontalContentAlignment="Center" Visibility="Visible">
+        <Label x:Name="lbMicrophone" Content="Microphone selection" HorizontalAlignment="Center" Margin="0,228,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Visibility="Visible"/>
+        <Label x:Name="lbSpeaker" Content="Speaker selection" HorizontalAlignment="Center" Margin="0,315,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Visibility="Visible"/>
+        <Label x:Name="lbTimer" Content="0" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" HorizontalContentAlignment="Center" Visibility="Hidden">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
@@ -41,7 +41,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label x:Name="lbText" Content="0" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="48" FontWeight="Bold" Visibility="Visible" Margin="0,154,0,0" Width="400" Height="74">
+        <Label x:Name="lbText" Content="0" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="48" FontWeight="Bold" Visibility="Hidden" Margin="0,154,0,0" Width="501" Height="74">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
@@ -49,7 +49,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label x:Name="lbSubText" Content="0" HorizontalAlignment="Center" Margin="0,99,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Visibility="Visible">
+        <Label x:Name="lbSubText" Content="0" HorizontalAlignment="Center" Margin="0,99,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Visibility="Hidden">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
@@ -57,7 +57,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label x:Name="lbTranscription" Content="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,464,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="400" Visibility="Visible"/>
+        <Label x:Name="lbTranscription" Content="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,464,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="400" Visibility="Hidden"/>
         <!--<Label x:Name="lbRussianWords" Content="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,287,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="400" Visibility="Visible"/>-->
         <Button x:Name="btnIncVol" Content="Button" HorizontalAlignment="Left" Margin="366,539,0,0" VerticalAlignment="Top" Width="54" Height="54" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="btnIncVol_Click" MouseMove="btnIncVol_MouseMove" MouseLeave="btnIncVol_MouseLeave">
             <Button.Background>
