@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VocaEnglish"
         mc:Ignorable="d"
-        Title="VocaEnglish" Height="653" Width="641" ResizeMode="NoResize" Loaded="VocaEnglish_Loaded" Closing="VocaEnglish_Closing" Activated="VocaEnglish_Activated">
+        Title="VocaEnglish" Height="737" Width="641" ResizeMode="NoResize" Loaded="VocaEnglish_Loaded" Closing="VocaEnglish_Closing" Activated="VocaEnglish_Activated">
     <Grid>
-        <Button x:Name="btnPlay" Content="Button" HorizontalAlignment="Center" Margin="0,539,0,0" VerticalAlignment="Top" Width="54" Height="54" BorderBrush="{x:Null}" Foreground="{x:Null}" MouseMove="btnPlay_MouseMove" MouseLeave="btnPlay_MouseLeave" Click="btnPlay_Click">
+        <Button x:Name="btnPlay" Content="Button" HorizontalAlignment="Center" Margin="0,598,0,0" VerticalAlignment="Top" Width="54" Height="54" BorderBrush="{x:Null}" Foreground="{x:Null}" MouseMove="btnPlay_MouseMove" MouseLeave="btnPlay_MouseLeave" Click="btnPlay_Click">
             <Button.Background>
                 <ImageBrush x:Name="ImgBackPlay" ImageSource="/button-play-inactive.png"/>
             </Button.Background>
@@ -33,7 +33,7 @@
         </ComboBox>
         <Label x:Name="lbMicrophone" Content="Microphone selection" HorizontalAlignment="Center" Margin="0,228,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Visibility="Visible"/>
         <Label x:Name="lbSpeaker" Content="Speaker selection" HorizontalAlignment="Center" Margin="0,315,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Visibility="Visible"/>
-        <Label x:Name="lbTimer" Content="0" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" HorizontalContentAlignment="Center" Visibility="Hidden">
+        <Label x:Name="lbTimer" Content="0" HorizontalAlignment="Center" Margin="0,11,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" HorizontalContentAlignment="Center" Visibility="Hidden">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
@@ -41,7 +41,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label x:Name="lbText" Content="0" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="48" FontWeight="Bold" Visibility="Hidden" Margin="0,154,0,0" Width="501" Height="74">
+        <Label x:Name="lbText" Content="0" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="48" FontWeight="Bold" Visibility="Hidden" Margin="0,180,0,0" Width="501" Height="74">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
@@ -49,7 +49,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label x:Name="lbSubText" Content="0" HorizontalAlignment="Center" Margin="0,99,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Visibility="Hidden">
+        <Label x:Name="lbSubText" Content="0" HorizontalAlignment="Center" Margin="0,93,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" Visibility="Hidden">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
@@ -57,9 +57,9 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Label x:Name="lbTranscription" Content="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,464,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="400" Visibility="Hidden"/>
+        <Label x:Name="lbTranscription" Content="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,522,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="400" Visibility="Hidden"/>
         <!--<Label x:Name="lbRussianWords" Content="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,287,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="400" Visibility="Visible"/>-->
-        <Button x:Name="btnIncVol" Content="Button" HorizontalAlignment="Left" Margin="366,539,0,0" VerticalAlignment="Top" Width="54" Height="54" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="btnIncVol_Click" MouseMove="btnIncVol_MouseMove" MouseLeave="btnIncVol_MouseLeave">
+        <Button x:Name="btnIncVol" Content="Button" HorizontalAlignment="Left" Margin="366,598,0,0" VerticalAlignment="Top" Width="54" Height="54" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="btnIncVol_Click" MouseMove="btnIncVol_MouseMove" MouseLeave="btnIncVol_MouseLeave">
             <Button.Background>
                 <ImageBrush x:Name="ImgBtnIncVol" ImageSource="/button-soundup-inactive.png"/>
             </Button.Background>
@@ -69,7 +69,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnDecVol" Content="Button" HorizontalAlignment="Left" Margin="205,539,0,0" VerticalAlignment="Top" Height="54" Width="54" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="btnDecVol_Click" MouseMove="btnDecVol_MouseMove" MouseLeave="btnDecVol_MouseLeave">
+        <Button x:Name="btnDecVol" Content="Button" HorizontalAlignment="Left" Margin="205,598,0,0" VerticalAlignment="Top" Height="54" Width="54" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="btnDecVol_Click" MouseMove="btnDecVol_MouseMove" MouseLeave="btnDecVol_MouseLeave">
             <Button.Background>
                 <ImageBrush x:Name="ImgBtnDecVol" ImageSource="/button-sounddown-inactive.png"/>
             </Button.Background>
@@ -79,6 +79,15 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Image x:Name="ImgPicture" HorizontalAlignment="Center" Height="192" Margin="0,254,0,0" VerticalAlignment="Top" Width="192"/>
+        <Image x:Name="ImgPicture" HorizontalAlignment="Center" Height="250" Margin="0,262,0,0" VerticalAlignment="Top" Width="250"/>
+        <Label x:Name="lbSignature" Content="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,147,0,0" VerticalAlignment="Top" Width="502" Height="34" FontSize="20" FontWeight="Bold" Visibility="Hidden"/>
+        <Label x:Name="lbCountWords" FontSize="20" FontWeight="Bold" Content="0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="552,10,0,0" VerticalAlignment="Top" Height="64" Width="79" Visibility="Hidden">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF100B7"/>
+                    <GradientStop Color="#FF8D00FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
     </Grid>
 </Window>

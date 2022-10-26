@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:VocaEnglish"
         mc:Ignorable="d" Height="210" Width="530" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBlock x:Name="tblNLesOrMusic" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Первый урок закончился. Сейчас начнет играть музыка, после окончания музыки можно будет начать второй урок. Либо его можно будет начать прямо сейчас." VerticalAlignment="Top" Height="99" Width="448" FontSize="16" FontWeight="Bold">
+        <TextBlock x:Name="tblNLesOrMusic" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Первый урок закончился. Нажав кнопку 'Подождать', заиграет музыка, после окончания музыки можно будет начать второй урок. Либо его можно будет начать прямо сейчас." VerticalAlignment="Top" Height="99" Width="448" FontSize="16" FontWeight="Bold">
             <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>

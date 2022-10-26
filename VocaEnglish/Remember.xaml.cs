@@ -21,7 +21,7 @@ namespace VocaEnglish
     public partial class Remember : Window
     {
 
-        static StreamReader fileName = new StreamReader(@"VocaEnglish\Words\WordsRemember.tmp", System.Text.Encoding.Default);
+        static StreamReader fileName = new StreamReader(@"VocaEnglish\Words\WordsRemember.tmp", System.Text.Encoding.UTF8);
         string[] txt = fileName.ReadToEnd().Split(new char[] { ';' }, StringSplitOptions.None);
         int countGeneral = 0, countRemember = 0, countIdontRemember = 0;
         bool RememberBool = false, dontRemember = false;
