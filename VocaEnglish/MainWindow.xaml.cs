@@ -447,7 +447,7 @@ namespace VocaEnglish
                         Stop();
 
                         Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
-                        Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+                        Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ СЛОВО И ПОЗУ С КАРТИНКИ");
                         StartFullDuplex1();
                     await Task.Run(() => PitchStep());
                     await Task.Run(() => TimerRec());
@@ -536,7 +536,7 @@ namespace VocaEnglish
                     Stop();
 
                     Dispatcher.Invoke(() => lbSubText.Visibility = Visibility.Visible);
-                    Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ");
+                    Dispatcher.Invoke(() => lbSubText.Content = "ПОВТОРИТЕ СЛОВО И ПОЗУ С КАРТИНКИ");
                     StartFullDuplex1();
                     await Task.Run(() => PitchStep());
                     await Task.Run(() => TimerRec());

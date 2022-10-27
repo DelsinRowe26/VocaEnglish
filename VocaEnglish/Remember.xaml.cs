@@ -23,6 +23,10 @@ namespace VocaEnglish
 
         static StreamReader fileName = new StreamReader(@"VocaEnglish\Words\WordsRemember.tmp", System.Text.Encoding.UTF8);
         string[] txt = fileName.ReadToEnd().Split(new char[] { ';' }, StringSplitOptions.None);
+
+        static StreamReader reader = new StreamReader(@"VocaEnglish\Words\RussianWords.tmp", System.Text.Encoding.UTF8);
+        string[] txtRus = reader.ReadToEnd().Split(new char[] { ';' }, StringSplitOptions.None);
+
         int countGeneral = 0, countRemember = 0, countIdontRemember = 0;
         bool RememberBool = false, dontRemember = false;
         int Procents = 0;
@@ -63,6 +67,22 @@ namespace VocaEnglish
 
             Words();
         }
+
+        private void RandomAnswer()
+        {
+            Random random = new Random();
+            int value = random.Next(0, 4);
+            int count = 0;
+            int backRnd = value;
+            if(value == 0)
+            {
+                rbFirst.Content = 
+            }
+            while(count < 5)
+            {
+                value = 
+            }
+        }
         
         private async void Words()
         {
@@ -72,6 +92,7 @@ namespace VocaEnglish
                 btnRemember.IsEnabled = true;
 
                 lbWords.Content = txt[countGeneral].ToString();
+
 
                 if (RememberBool == true)
                 {

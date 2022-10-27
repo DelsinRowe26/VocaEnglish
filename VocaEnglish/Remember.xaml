@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VocaEnglish"
         mc:Ignorable="d"
-        Title="Remember" Height="232" Width="484" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True" Loaded="WinRemember_Loaded">
+        Title="Remember" Height="273" Width="484" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True" Loaded="WinRemember_Loaded">
     <Grid>
-        <Label x:Name="lbWords" Content="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" Visibility="Hidden">
+        <Label x:Name="lbWords" Content="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" Visibility="Visible">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
@@ -15,7 +15,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Button x:Name="btnRemember" Content="Помню" HorizontalAlignment="Left" Margin="32,126,0,0" VerticalAlignment="Top" Height="42" Width="124" FontSize="20" FontWeight="Bold" Click="btnRemember_Click" IsEnabled="False">
+        <Button x:Name="btnRemember" Content="Следующий" HorizontalAlignment="Left" Margin="318,182,0,0" VerticalAlignment="Top" Height="42" Width="124" FontSize="18" FontWeight="Bold" Click="btnRemember_Click" IsEnabled="False">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
@@ -23,7 +23,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="btnIdontRemember" Content="Не помню" HorizontalAlignment="Left" Margin="309,126,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="42" Width="124" Click="btnIdontRemember_Click" IsEnabled="False">
+        <Button x:Name="btnIdontRemember" Content="Не помню" HorizontalAlignment="Left" Margin="318,66,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="42" Width="124" Click="btnIdontRemember_Click" IsEnabled="False">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF100B7"/>
@@ -31,6 +31,11 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
+        <RadioButton x:Name="rbFirst" Content="0" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <RadioButton x:Name="rbSecond" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" VerticalContentAlignment="Center"/>
+        <RadioButton x:Name="rbThird" Content="0" HorizontalAlignment="Left" Margin="138,147,0,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
+        <RadioButton x:Name="rbFour" Content="0" HorizontalAlignment="Left" Margin="381,0,0,0" VerticalAlignment="Center" FontSize="16" VerticalContentAlignment="Center"/>
+        <RadioButton x:Name="rbFive" Content="0" HorizontalAlignment="Left" Margin="318,147,0,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
 
     </Grid>
 </Window>
