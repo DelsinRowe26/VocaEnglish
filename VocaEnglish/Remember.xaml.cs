@@ -27,9 +27,14 @@ namespace VocaEnglish
         static StreamReader reader = new StreamReader(@"VocaEnglish\Words\RussianWords.tmp", System.Text.Encoding.UTF8);
         string[] txtRus = reader.ReadToEnd().Split(new char[] { ';' }, StringSplitOptions.None);
 
-        int countGeneral = 0, countRemember = 0, countIdontRemember = 0;
+        static StreamReader stream = new StreamReader(@"VocaEnglish\Words\Russian.tmp", System.Text.Encoding.UTF8);
+        string[] RandomRussia = stream.ReadToEnd().Split(new char[] { ';' }, StringSplitOptions.None);
+
+        int countGeneral = 0, countRemember = 0, countIdontRemember = 0, countGeneralRus = 0, rightCouunt = 0;
         bool RememberBool = false, dontRemember = false;
+        
         int Procents = 0;
+        int backRnd = 0;
 
         private void btnRemember_Click(object sender, RoutedEventArgs e)
         {
@@ -38,6 +43,11 @@ namespace VocaEnglish
             countRemember++;
             RememberBool = true;
             Words();
+        }
+
+        private void rbFirst_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void btnIdontRemember_Click(object sender, RoutedEventArgs e)
@@ -66,6 +76,7 @@ namespace VocaEnglish
             await Task.Delay(5000);
 
             Words();
+            RandomAnswer();
         }
 
         private void RandomAnswer()
@@ -73,14 +84,67 @@ namespace VocaEnglish
             Random random = new Random();
             int value = random.Next(0, 4);
             int count = 0;
-            int backRnd = value;
+            string wordsno, NoSpace;
+            backRnd = value;
             if(value == 0)
             {
-                rbFirst.Content = 
+                wordsno = txtRus[countGeneral];
+                rbFirst.Content = wordsno;
             }
-            while(count < 5)
+            else if (value == 1)
             {
-                value = 
+                wordsno = txtRus[countGeneral];
+                rbSecond.Content = wordsno;
+            }
+            else if (value == 2)
+            {
+                wordsno = txtRus[countGeneral];
+                rbThird.Content = wordsno;
+            }
+            else if (value == 3)
+            {
+                wordsno = txtRus[countGeneral];
+                rbFour.Content = wordsno;
+            }
+            else if (value == 4)
+            {
+                wordsno = txtRus[countGeneral];
+                rbFive.Content = wordsno;
+            }
+            while (count < 5)
+            {
+                if (count != backRnd)
+                {
+                    switch (count) 
+                    {
+                        case 0:
+                            NoSpace = RandomRussia[countGeneralRus];
+                            rbFirst.Content = NoSpace;
+                            countGeneralRus++;
+                            break;
+                        case 1:
+                            NoSpace = RandomRussia[countGeneralRus];
+                            rbSecond.Content = NoSpace;
+                            countGeneralRus++;
+                            break;
+                        case 2:
+                            NoSpace = RandomRussia[countGeneralRus];
+                            rbThird.Content = NoSpace;
+                            countGeneralRus++;
+                            break;
+                        case 3:
+                            NoSpace = RandomRussia[countGeneralRus];
+                            rbFour.Content = NoSpace;
+                            countGeneralRus++;
+                            break;
+                        case 4:
+                            NoSpace = RandomRussia[countGeneralRus];
+                            rbFive.Content = NoSpace;
+                            countGeneralRus++;
+                            break;
+                    }
+                }
+                count++;
             }
         }
         

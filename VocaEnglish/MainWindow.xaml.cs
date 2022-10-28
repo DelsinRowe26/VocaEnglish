@@ -717,14 +717,14 @@ namespace VocaEnglish
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-            /*Remember remember = new Remember();
-            remember.ShowDialog();*/
-            ImgBtnTurboClick = 1;
+            Remember remember = new Remember();
+            remember.ShowDialog();
+            /*ImgBtnTurboClick = 1;
             EnglishVoca();
             cmbInput.Visibility = Visibility.Hidden;
             lbMicrophone.Visibility = Visibility.Hidden;
             cmbOutput.Visibility = Visibility.Hidden;
-            lbSpeaker.Visibility = Visibility.Hidden;
+            lbSpeaker.Visibility = Visibility.Hidden;*/
             
             
         }
