@@ -47,7 +47,104 @@ namespace VocaEnglish
 
         private void rbFirst_Checked(object sender, RoutedEventArgs e)
         {
+            if(backRnd == 0)
+            {
+                
+                countGeneral++;
+                countRemember++;
+                Words();
+                RandomAnswer();
+                rbFirst.IsChecked = false;
+            }
+            else
+            {
+                countIdontRemember++;
+                countGeneral++;
+                Words();
+                RandomAnswer();
+                rbFirst.IsChecked = false;
+            }
+        }
 
+        private void rbSecond_Checked(object sender, RoutedEventArgs e)
+        {
+            if (backRnd == 1)
+            {
+                countGeneral++;
+                countRemember++;
+                Words();
+                RandomAnswer();
+                rbSecond.IsChecked = false;
+            }
+            else
+            {
+                countIdontRemember++;
+                countGeneral++;
+                Words();
+                RandomAnswer();
+                rbSecond.IsChecked = false;
+            }
+        }
+
+        private void rbThird_Checked(object sender, RoutedEventArgs e)
+        {
+            if (backRnd == 2)
+            {
+                countGeneral++;
+                countRemember++;
+                Words();
+                RandomAnswer();
+                rbThird.IsChecked = false;
+            }
+            else
+            {
+                countIdontRemember++;
+                countGeneral++;
+                Words();
+                RandomAnswer();
+                rbThird.IsChecked = false;
+            }
+        }
+
+        private void rbFour_Checked(object sender, RoutedEventArgs e)
+        {
+            if (backRnd == 3)
+            {
+                countIdontRemember++;
+                countGeneral++;
+                countRemember++;
+                Words();
+                RandomAnswer();
+                rbFour.IsChecked = false;
+            }
+            else
+            {
+                countIdontRemember++;
+                countGeneral++;
+                Words();
+                RandomAnswer();
+                rbFour.IsChecked = false;
+            }
+        }
+
+        private void rbFive_Checked(object sender, RoutedEventArgs e)
+        {
+            if (backRnd == 4)
+            {
+                countGeneral++;
+                countRemember++;
+                Words();
+                RandomAnswer();
+                rbFive.IsChecked = false;
+            }
+            else
+            {
+                countIdontRemember++;
+                countGeneral++;
+                Words();
+                RandomAnswer();
+                rbFive.IsChecked = false;
+            }
         }
 
         private void btnIdontRemember_Click(object sender, RoutedEventArgs e)
@@ -71,124 +168,119 @@ namespace VocaEnglish
             countIdontRemember = 0;
             File.WriteAllText("Data_Remember.tmp", " ");
             File.WriteAllText("Data_IdontRemember.tmp", " ");
-            lbWords.Content = " Сейчас будут появляться слова\n         и вы должны нажать\n            на одну из кнопок\nесли вы помните перевод слова";
+            lbWords.Content = " Сейчас будут появляться слова\n         и вы должны выбрать\n    правильный вариант ответа";
             lbWords.Visibility = Visibility.Visible;
             await Task.Delay(5000);
-
+            
             Words();
             RandomAnswer();
+            rbFirst.Visibility = Visibility.Visible;
+            rbSecond.Visibility = Visibility.Visible;
+            rbThird.Visibility = Visibility.Visible;
+            rbFour.Visibility = Visibility.Visible;
+            rbFive.Visibility = Visibility.Visible;
         }
 
         private void RandomAnswer()
         {
-            Random random = new Random();
-            int value = random.Next(0, 4);
-            int count = 0;
-            string wordsno, NoSpace;
-            backRnd = value;
-            if(value == 0)
+            if (countGeneral != txt.Length-1)
             {
-                wordsno = txtRus[countGeneral];
-                rbFirst.Content = wordsno;
-            }
-            else if (value == 1)
-            {
-                wordsno = txtRus[countGeneral];
-                rbSecond.Content = wordsno;
-            }
-            else if (value == 2)
-            {
-                wordsno = txtRus[countGeneral];
-                rbThird.Content = wordsno;
-            }
-            else if (value == 3)
-            {
-                wordsno = txtRus[countGeneral];
-                rbFour.Content = wordsno;
-            }
-            else if (value == 4)
-            {
-                wordsno = txtRus[countGeneral];
-                rbFive.Content = wordsno;
-            }
-            while (count < 5)
-            {
-                if (count != backRnd)
+                Random random = new Random();
+                int value = random.Next(0, 4);
+                int count = 0;
+                string wordsno, NoSpace;
+                backRnd = value;
+                if (value == 0)
                 {
-                    switch (count) 
-                    {
-                        case 0:
-                            NoSpace = RandomRussia[countGeneralRus];
-                            rbFirst.Content = NoSpace;
-                            countGeneralRus++;
-                            break;
-                        case 1:
-                            NoSpace = RandomRussia[countGeneralRus];
-                            rbSecond.Content = NoSpace;
-                            countGeneralRus++;
-                            break;
-                        case 2:
-                            NoSpace = RandomRussia[countGeneralRus];
-                            rbThird.Content = NoSpace;
-                            countGeneralRus++;
-                            break;
-                        case 3:
-                            NoSpace = RandomRussia[countGeneralRus];
-                            rbFour.Content = NoSpace;
-                            countGeneralRus++;
-                            break;
-                        case 4:
-                            NoSpace = RandomRussia[countGeneralRus];
-                            rbFive.Content = NoSpace;
-                            countGeneralRus++;
-                            break;
-                    }
+                    wordsno = txtRus[countGeneral];
+                    rbFirst.Content = wordsno;
                 }
-                count++;
+                else if (value == 1)
+                {
+                    wordsno = txtRus[countGeneral];
+                    rbSecond.Content = wordsno;
+                }
+                else if (value == 2)
+                {
+                    wordsno = txtRus[countGeneral];
+                    rbThird.Content = wordsno;
+                }
+                else if (value == 3)
+                {
+                    wordsno = txtRus[countGeneral];
+                    rbFour.Content = wordsno;
+                }
+                else if (value == 4)
+                {
+                    wordsno = txtRus[countGeneral];
+                    rbFive.Content = wordsno;
+                }
+                while (count < 5)
+                {
+                    if (count != backRnd)
+                    {
+                        switch (count)
+                        {
+                            case 0:
+                                NoSpace = RandomRussia[countGeneralRus];
+                                rbFirst.Content = NoSpace;
+                                countGeneralRus++;
+                                break;
+                            case 1:
+                                NoSpace = RandomRussia[countGeneralRus];
+                                rbSecond.Content = NoSpace;
+                                countGeneralRus++;
+                                break;
+                            case 2:
+                                NoSpace = RandomRussia[countGeneralRus];
+                                rbThird.Content = NoSpace;
+                                countGeneralRus++;
+                                break;
+                            case 3:
+                                NoSpace = RandomRussia[countGeneralRus];
+                                rbFour.Content = NoSpace;
+                                countGeneralRus++;
+                                break;
+                            case 4:
+                                NoSpace = RandomRussia[countGeneralRus];
+                                rbFive.Content = NoSpace;
+                                countGeneralRus++;
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        countGeneralRus++;
+                    }
+                    count++;
+                }
+            }
+            else
+            {
+                rbFirst.Visibility = Visibility.Hidden;
+                rbSecond.Visibility = Visibility.Hidden;
+                rbThird.Visibility = Visibility.Hidden;
+                rbFour.Visibility = Visibility.Hidden;
+                rbFive.Visibility = Visibility.Hidden;
             }
         }
         
         private async void Words()
         {
-            if (countRemember + countIdontRemember != txt.Length-2)
+            
+            if (countGeneral != txt.Length-1)
             {
-                btnIdontRemember.IsEnabled = true;
-                btnRemember.IsEnabled = true;
+                //btnIdontRemember.IsEnabled = true;
+                //btnRemember.IsEnabled = true;
 
                 lbWords.Content = txt[countGeneral].ToString();
-
-
-                if (RememberBool == true)
-                {
-                    if(countGeneral == 1)
-                    {
-                        countGeneral--;
-                        File.AppendAllText("Data_Remember.tmp", txt[countGeneral].ToString());
-                        countGeneral++;
-                    }
-                    RememberBool = false;
-                    
-                    File.AppendAllText("Data_Remember.tmp", txt[countGeneral].ToString());
-                }
-                else if (dontRemember == true)
-                {
-                    if(countGeneral == 1)
-                    {
-                        countGeneral--;
-                        File.AppendAllText("Data_IdontRemember.tmp", txt[countGeneral].ToString());
-                        countGeneral++;
-                    }
-                    dontRemember = false;
-                    
-                    File.AppendAllText("Data_IdontRemember.tmp", txt[countGeneral].ToString());
-                }
             }
             else
             {
                 File.AppendAllText("Data_Remember.tmp", "\n" + countRemember.ToString());
                 File.AppendAllText("Data_IdontRemember.tmp", "\n" + countIdontRemember.ToString());
 
-                Procents = (countRemember * 100) / 39;
+                Procents = (countRemember * 100) / 38;
                 lbWords.Content = "Вы помните:\n" + "      " + Procents.ToString("f2") + "%" + "\nиз 100% слов";
                 await Task.Delay(5000);
 

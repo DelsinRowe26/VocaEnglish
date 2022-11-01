@@ -31,11 +31,11 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <RadioButton x:Name="rbFirst" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="16" Checked="rbFirst_Checked" Margin="214,103,0,0"/>
-        <RadioButton x:Name="rbSecond" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" Margin="214,127,0,0"/>
-        <RadioButton x:Name="rbThird" Content="0" HorizontalAlignment="Left" Margin="214,153,0,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
-        <RadioButton x:Name="rbFour" Content="0" HorizontalAlignment="Left" Margin="214,178,0,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
-        <RadioButton x:Name="rbFive" Content="0" HorizontalAlignment="Left" Margin="214,203,0,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
+        <RadioButton x:Name="rbFirst" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="16" Checked="rbFirst_Checked" Margin="187,103,0,0" Visibility="Hidden"/>
+        <RadioButton x:Name="rbSecond" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" Margin="187,127,0,0" Checked="rbSecond_Checked" Visibility="Hidden"/>
+        <RadioButton x:Name="rbThird" Content="0" HorizontalAlignment="Left" Margin="187,153,0,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" Checked="rbThird_Checked" Visibility="Hidden"/>
+        <RadioButton x:Name="rbFour" Content="0" HorizontalAlignment="Left" Margin="187,178,0,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" Checked="rbFour_Checked" Visibility="Hidden"/>
+        <RadioButton x:Name="rbFive" Content="0" HorizontalAlignment="Left" Margin="187,203,0,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" Checked="rbFive_Checked" Visibility="Hidden"/>
 
     </Grid>
 </Window>
